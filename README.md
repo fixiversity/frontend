@@ -1,4 +1,4 @@
-# edu-change
+# Fixiversity
 Provide reputation incentive for universities to take and respond to feedback
 
 ## Links
