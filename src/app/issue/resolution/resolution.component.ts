@@ -1,3 +1,4 @@
+import { AngularFireAuth } from '@angular/fire/auth';
 import { DocumentSnapshot } from '@angular/fire/firestore';
 import { Component, OnInit, Input } from '@angular/core';
 import { Resolution } from 'src/app/resolution';
@@ -15,12 +16,25 @@ export class ResolutionComponent implements OnInit {
   resolution: Resolution;
   resAuthor: any;
   display: boolean;
+  uid: string;
 
   constructor(
-    private service: ResolutionService
+    private service: ResolutionService,
+    private afAuth: AngularFireAuth,
   ) { }
 
   async ngOnInit() {
+    this.afAuth.authState.subscribe((user) => {
+      try {
+        this.uid = user.uid;
+      } catch (error) {
+        console.log('User not logged in!');
+      }
+      console.log(user.uid);
+    }, (error) => {
+      console.log('AuthState error:', error);
+    });
+
     this.resolution$ = await this.service.getResolution(this.id);
     this.resolution = this.resolution$.data();
     this.resAuthor = await this.resolution.user.get().then((snapshot) => {

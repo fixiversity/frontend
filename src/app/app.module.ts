@@ -67,7 +67,7 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
     HomeComponent,
     RankedinstitutionsComponent,
     ResolutionComponent,
-    Error404Component
+    Error404Component,
     IssueSubmitComponent
   ],
   imports: [
