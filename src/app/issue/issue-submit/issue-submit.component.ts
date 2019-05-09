@@ -1,3 +1,4 @@
+import { LoginService } from './../../login.service';
 import { SubmissionService } from './../../submission.service';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
@@ -21,7 +22,8 @@ export class IssueSubmitComponent implements OnInit {
   uid: string;
 
   constructor(
-    private service: SubmissionService,
+    private submitService: SubmissionService,
+    private loginService: LoginService,
     private afAuth: AngularFireAuth
   ) { }
 
@@ -45,10 +47,10 @@ export class IssueSubmitComponent implements OnInit {
   async onSubmit() {
     console.log('Form submitted:', this.submitForm.value);
     const { title, description, criteria, severity, category } = this.submitForm.value;
-    const id = await this.service.getID();
-    const user = await this.service.getTestUser();
+    const id = await this.submitService.getID();
+    const user = await this.loginService.getTestUser();
     const resolutions = [];
-    this.service.updateIssues({id, title, description, resolutions, user});
+    this.submitService.updateIssues({id, title, description, resolutions, user});
   }
 
   successCallback(successData: FirebaseUISignInSuccessWithAuthResult) {

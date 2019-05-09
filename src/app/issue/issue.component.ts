@@ -53,7 +53,7 @@ export class IssueComponent implements OnInit {
       });
 
       this.resID = issue.resolutions[0].id;
-      
+
       this.service.getComments(this.issue.id).subscribe(comments => {
         this.comments = comments;
       });
