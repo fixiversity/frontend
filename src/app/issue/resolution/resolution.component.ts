@@ -1,8 +1,6 @@
 import { AngularFireAuth } from '@angular/fire/auth';
-import { DocumentSnapshot } from '@angular/fire/firestore';
 import { Component, OnInit, Input } from '@angular/core';
 import { Resolution } from 'src/app/resolution';
-import { User } from 'src/app/user';
 import { ResolutionService } from 'src/app/resolution.service';
 
 @Component({
@@ -30,7 +28,6 @@ export class ResolutionComponent implements OnInit {
       } catch (error) {
         console.log('User not logged in!');
       }
-      console.log(user.uid);
     }, (error) => {
       console.log('AuthState error:', error);
     });
@@ -42,7 +39,6 @@ export class ResolutionComponent implements OnInit {
     });
   }
 
-  // Would like to get the database to update when this value changes
   upvoteAdequacy() {
     this.resolution.rating++;
     this.service.updateResolution(this.resolution$.ref, this.resolution);
