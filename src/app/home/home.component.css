@@ -16,7 +16,8 @@
 }
 .mat-button {
   position: absolute;
-  bottom: 5px;;
+  bottom: 10px;
+  left: 10px;
 }
 .mat-elevation-z {
   border-bottom: 3px solid #e91e62;
