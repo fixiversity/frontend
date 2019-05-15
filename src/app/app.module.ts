@@ -26,6 +26,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import {FirebaseUIModule} from 'firebaseui-angular';
 import * as firebase from 'firebase/app';
 import * as firebaseui from 'firebaseui';
+import { LoaderComponent } from './loader/loader.component';
 
 const firebaseUiAuthConfig: firebaseui.auth.Config = {
   signInFlow: 'popup',
@@ -68,7 +69,8 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
     RankedinstitutionsComponent,
     ResolutionComponent,
     Error404Component,
-    IssueSubmitComponent
+    IssueSubmitComponent,
+    LoaderComponent
   ],
   imports: [
     BrowserModule,
