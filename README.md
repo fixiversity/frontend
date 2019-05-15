@@ -1,4 +1,4 @@
-# [fixiversity](https://fixiversity.com)
+# [![Fixiversity](src/assets/images/fixiversityL.svg?raw=true)](https://fixiversity.com)
 A *modern web-app* to provide reputation incentive for universities to take and respond to feedback
 
 ## Installation
