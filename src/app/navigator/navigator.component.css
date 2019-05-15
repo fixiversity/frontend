@@ -29,9 +29,10 @@ mat-drawer {
   position: relative;
   justify-content: left;
   grid-area: tl-nav;
-  background-color: #e91e63;
+  background-color: rgba(255, 255, 255, 0.726);
+  color: #e91e63;
   padding-left: 1em;
-  color: white;
+  border-bottom: 5px solid #e91e63;
     -moz-user-select: none;
     -webkit-user-select: none;
     -ms-user-select: none;
@@ -74,4 +75,35 @@ mat-drawer {
 
 .cdk-focused {
   background-color: #e2014c;
+}
+
+#logo {
+  line-height: 40px;
+}
+#logo img {
+  height: 30px;
+}
+#logo mat-icon {
+  position: relative;
+  top: .18em;
+  cursor: pointer;
+  padding-right: .4em;
+}
+#l-nav {
+  padding-top: .5em;
+}
+
+app-nav-route span {
+  display: block;
+  text-align: center;
+  position: relative;
+  top: -1em;
+  z-index: -1;
+  opacity: 0;
+  transition: .2s top, .2s opacity;
+}
+
+app-nav-route:hover span {
+  top: -.15em;
+  opacity: 1;
 }
