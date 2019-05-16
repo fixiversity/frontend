@@ -1,0 +1,5 @@
+---
+applications:
+ - name: Fixversity
+   random-route: true
+   memory: 512M
