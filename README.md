@@ -43,7 +43,7 @@ A *modern web-app* to provide reputation incentive for universities to take and 
 
 **[Caelum Forder](https://github.com/CaelumF)**
 
-**[Victor Panayotova](https://github.com/paranoidcake)**
+**[Victor Panayotov](https://github.com/paranoidcake)**
 
 **[Eric Moynihan](https://github.com/ericm)**
 
