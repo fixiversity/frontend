@@ -33,7 +33,12 @@ A *modern web-app* to provide reputation incentive for universities to take and 
 
 - *c. 1300*, "institution of **higher learning**," also "body of persons constituting a **university**," from Anglo-French université, Old French universite "universality; academic community" (13c.), from Medieval Latin universitatem (nominative universitas), "the whole, aggregate," in Late Latin "corporation, society," from universus "whole, entire" (see universe). In the academic sense, a shortening of universitas magistrorum et scholarium "community of masters and scholars;" superseded studium as the word for this. The Latin word also is the source of Spanish universidad, German universität, Russian universitetŭ, etc
 
+## Issues
+Send issues to our central issue repository: https://github.com/fixiversity/tracking
+
 ## Project Links
+
+[Issue Repository](https://github.com/fixiversity/tracking)
 
 [Trello](https://trello.com/b/pS4hy32F) (*For non-code related tasks*)
 
