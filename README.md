@@ -27,7 +27,7 @@ A *modern web-app* to provide reputation incentive for universities to take and 
 ## Name etymology
 - The name **Fixiversity** is a combination of the words **Fix** and **University**.
 
-- This name was chosen as it represents out mission of *"fixing"* universities that may have problems.
+- This name was chosen as it represents our mission of *"fixing"* universities that may have problems.
 
 ### university (n.)
 
