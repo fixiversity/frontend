@@ -1,0 +1,3 @@
+const keys = {
+  apiKey: '${FIREBASE_KEY}',
+};
