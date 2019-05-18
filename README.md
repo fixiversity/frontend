@@ -4,8 +4,15 @@ A *modern web-app* to provide reputation incentive for universities to take and 
 *Visit this project online at: https://fixiversity.com*
 
 ## Installation
-0. (First time) Run: `npm install` in the base directory
-1. Create a new file in `src/environments` called `keys.ts` with the following template:
+- (First time) Run: `npm install` in the base directory
+
+### Option 1
+- Create an environment variable called `FIREBASE_KEY`
+  - Example: `export FIREBASE_KEY=insert_key_here`
+- Run `npm run config` in the base directory
+
+### Option 2
+- Create a new file in `src/environments` called `keys.ts` with the following template:
     ```ts
     export const keys = {
         apiKey: '<API_KEY>',
