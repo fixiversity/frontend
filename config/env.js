@@ -1,4 +1,4 @@
-const envvar = require('./envvarTemplate');
+const envvar = require('./getEnv');
 const fs = require('fs');
 
 var buf = fs.readFileSync("config/keys.txt");
