@@ -1,0 +1,53 @@
+language: node_js
+node_js:
+  - '8'
+
+branches:
+  only:
+    - master
+    - dev
+
+before_script:
+  - npm install -g @angular/cli
+  - sh config/configure.sh
+
+script:
+  - ng build
+
+before_deploy:
+  - cd dist/edu-change
+
+deploy:
+  - provider: bluemixcloudfoundry
+    username:
+      secure: jiLvKXtQ87HUeJQJcl/dXlC03P15+Onkd13lFr1PmmIrfbqm5mw0pLZuWa0TYxkmXepX9M8UFTUrsys4KanGn2q+oMvYY6Pxn5gk2zbYBslse5IaefsERWcBP7nqCkGo7ky9JOMY/eSHmHPFZrYCRVSi7jDwGS7ZuJZ0KCLeKTO+zIg8AG2Q/tmv03xzfLLZjCzc+WFzIQ5W0JRR8TjnRhTaxsF/KNrl8JpkRGUmJMIg6FwTZ/YMaBpCFexKh5fwUaCy6SweK+T2bBxtM8yN98dAC5pEws7fl+b8qdMTxyrQdBV4b7WFnYqsHZRMcYmLPd+6J8uUjPv3hGkbtAAsl19Wj6zeINVDi6Pjz8rP6PV2YAiOA2Q7L+BaWGo7jyDI6d4coHl7NK9c1XdSyY4CPzRJMuEmrJFoZr9cxbD38ajNw4sPQ3TPUC9zCaYM9Gkgr3It+7psriehha65EqxKpQQjtp7K1fG+rK7aeA2XNanM1o7mvR1A2vQ/laJE4bWOngYQ3TrI24G7zBUexhSeNAjnEZD38IYU/WtHPQ2/Kko6o6sId4RxxC9G00tvAFIkbOqJBwSGSi3VgDMDgkTG76ITKyxg/GGqcXhibPCAGJoUci2zlo6zj16Kn612pAlM0tgBkgf9aE4HGRfiXl8xIjnFlLOuhRB8EjVzCFRkOqo=
+    password:
+      secure: GFjdFcWRBiORyVOJ6yQv+Y9ZW8cJW7uYCcCepLZkoDt5/lSBOwvo2csSUw8S0XyxGbeHqbHlXFlu2hcqGKGlYwRpXvgPjvYzu7BArOxLXoL82ITSM3QopkphtDIqDo3UIJLDlSIDzEHcwj8WdttnRRJry62cDbbpNdrL2GRIYmgSaqXFjRtJ/IKXR+q38su10DD6P79g1qjrr2tg+WXjw/N74Cpd+BA+x/z7vHDfaNq/bN/LDH3c6UKxi7uCewdU0geYty64OIeRRbb/ub7OdCRk1QKJuu3UdZ7ZAis4by4dfxi8/U+bzgPxf3sWYTu3ooDUmlUC+uvp6y6ahHKOP0RCfEBQJTQWK6SKIaxfSkj1TrSjMjPQDLdoPqbo9ZDws65QPcGggN9C0eLDFRXb4q+8mvGoit+klhSalhyN1bfWIYgb4rYnwKkbwRAJBLBrPx91X407f2nibuAVNLOjoaEKDMjrMzgt5P5RxzxyWXs+TmBM8ftD372uZ439wjk9xw33wSrNjtqF66ytE3T69Izf08NXQ5kYcywtrlLzUyoq60rlHEow77CDRzpp6lyq2ChPqIojVEhbwub8HNvIP0Cg4FcC7+LGjLA21lGOgfOWVwqSX/+H6yyOhG6SXBTwOH6R5NDosf+Wrr9Bri4cl5A/AFPc+KK3WMpaykMFk4U=
+    organization: dojo-org
+    space: prod
+    manifest: "../../config/manifests/manifest-prod.yml"
+    app_name: Fixversity
+    app_name: fixiversity
+    region: eu-gb
+    api: https://api.eu-gb.bluemix.net
+    on:
+      branch: master
+  - provider: bluemixcloudfoundry
+    username:
+      secure: jiLvKXtQ87HUeJQJcl/dXlC03P15+Onkd13lFr1PmmIrfbqm5mw0pLZuWa0TYxkmXepX9M8UFTUrsys4KanGn2q+oMvYY6Pxn5gk2zbYBslse5IaefsERWcBP7nqCkGo7ky9JOMY/eSHmHPFZrYCRVSi7jDwGS7ZuJZ0KCLeKTO+zIg8AG2Q/tmv03xzfLLZjCzc+WFzIQ5W0JRR8TjnRhTaxsF/KNrl8JpkRGUmJMIg6FwTZ/YMaBpCFexKh5fwUaCy6SweK+T2bBxtM8yN98dAC5pEws7fl+b8qdMTxyrQdBV4b7WFnYqsHZRMcYmLPd+6J8uUjPv3hGkbtAAsl19Wj6zeINVDi6Pjz8rP6PV2YAiOA2Q7L+BaWGo7jyDI6d4coHl7NK9c1XdSyY4CPzRJMuEmrJFoZr9cxbD38ajNw4sPQ3TPUC9zCaYM9Gkgr3It+7psriehha65EqxKpQQjtp7K1fG+rK7aeA2XNanM1o7mvR1A2vQ/laJE4bWOngYQ3TrI24G7zBUexhSeNAjnEZD38IYU/WtHPQ2/Kko6o6sId4RxxC9G00tvAFIkbOqJBwSGSi3VgDMDgkTG76ITKyxg/GGqcXhibPCAGJoUci2zlo6zj16Kn612pAlM0tgBkgf9aE4HGRfiXl8xIjnFlLOuhRB8EjVzCFRkOqo=
+    password:
+      secure: GFjdFcWRBiORyVOJ6yQv+Y9ZW8cJW7uYCcCepLZkoDt5/lSBOwvo2csSUw8S0XyxGbeHqbHlXFlu2hcqGKGlYwRpXvgPjvYzu7BArOxLXoL82ITSM3QopkphtDIqDo3UIJLDlSIDzEHcwj8WdttnRRJry62cDbbpNdrL2GRIYmgSaqXFjRtJ/IKXR+q38su10DD6P79g1qjrr2tg+WXjw/N74Cpd+BA+x/z7vHDfaNq/bN/LDH3c6UKxi7uCewdU0geYty64OIeRRbb/ub7OdCRk1QKJuu3UdZ7ZAis4by4dfxi8/U+bzgPxf3sWYTu3ooDUmlUC+uvp6y6ahHKOP0RCfEBQJTQWK6SKIaxfSkj1TrSjMjPQDLdoPqbo9ZDws65QPcGggN9C0eLDFRXb4q+8mvGoit+klhSalhyN1bfWIYgb4rYnwKkbwRAJBLBrPx91X407f2nibuAVNLOjoaEKDMjrMzgt5P5RxzxyWXs+TmBM8ftD372uZ439wjk9xw33wSrNjtqF66ytE3T69Izf08NXQ5kYcywtrlLzUyoq60rlHEow77CDRzpp6lyq2ChPqIojVEhbwub8HNvIP0Cg4FcC7+LGjLA21lGOgfOWVwqSX/+H6yyOhG6SXBTwOH6R5NDosf+Wrr9Bri4cl5A/AFPc+KK3WMpaykMFk4U=
+    organization: dojo-org
+    space: dev
+    manifest: "../../config/manifests/manifest-dev.yml"
+    app_name: Fixversity
+    app_name: fixiversity
+    region: eu-gb
+    api: https://api.eu-gb.bluemix.net
+    on:
+      branch: dev
+
+env:
+  matrix:
+    secure: U+kFepDaaddV2M0LC55lJ04QLh3sG3BcQKzcC5VokWBGku3RXRFOvpp7NuMzbs4R2+YAjnXSUJG1fJGcKWcIwfZ/bcFLiDXtltqwtWfaDlPgd4nIpZ5H9xxK9rkI8JDp9LmGGfKdz+v+Pm/HEomTkcKn6WyR3fmvR8A8XEJZ3vIu3dzy+P7PwRNrO2RLP+zTEzwYe3lV0PeJiaggPzTvPwjXcWW/yjyr4RILU7gTj0/cbVBeOYYIpr19vOj5tW2cEnLLktq4qx7kGCk3x87kWyJG+aAxKc5sawPakztrL37ojpb901fg6nYSzyrTyls6lv1isuN5+mM3ZZ5L6vHmidNNmvNXWqKNTa2NHVZWW2qbhPgZryeyP7256jPCS8IwF7582cLSgNxv66XAZIHwKKT6KlqeYD6cyxcWvY5v7n4PY1qFPHxavggVI6ZLaaUIpJStO+MqYFgd7HqnjsIl9DnriGuPoZygIVMqhc3TUrAneJqsjYyrZ4zcRuqu1sPkKx0iQ775kEM4a54mJm//l4jFP+0M6I7xUNJEw4z/TT7acXyZMHWf1kO4iPTeZCuadoUnY92wuGxMrk6KRCRpJ+iRm0EdYZg1uH5ggeYiDmsliaVOjrxUFUh6E1+VJOfwIjCZxmvTYXusg9aW/CMRgDyg+Y34Jg0C3AdrmEpst9k=
+
