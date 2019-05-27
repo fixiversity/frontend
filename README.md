@@ -31,6 +31,9 @@ A *modern web-app* to provide reputation incentive for universities to take and 
 
 - Values should preferably be **statically typed**. Avoid the use of the `any` type.
 
+## User stories
+  https://www.mindmeister.com/1267689157?t=LQOdZvlxEp
+
 ## Name etymology
 - The name **Fixiversity** is a combination of the words **Fix** and **University**.
 
