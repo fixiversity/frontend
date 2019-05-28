@@ -1,3 +1,3 @@
 export const keys = {
-    apiKey: "$FIREBASE_API_KEY",
-}
+  apiKey: '${FIREBASE_API_KEY}',
+};

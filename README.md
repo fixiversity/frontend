@@ -8,7 +8,7 @@ A *modern web-app* to provide reputation incentive for universities to take and 
 
 ### Option 1
 - Create an environment variable called `FIREBASE_KEY`
-  - Example: `export FIREBASE_KEY=insert_key_here`
+  - Example: `export FIREBASE_API_KEY=insert_key_here`
 - Run `npm run config` in the base directory
 
 ### Option 2
