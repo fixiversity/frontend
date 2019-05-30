@@ -1,0 +1,9 @@
+---
+applications:
+  - name: Fixversity-prod
+  - name: fixiversity-prod
+    buildpack: https://github.com/cloudfoundry/staticfile-buildpack.git
+    memory: 64M
+    routes:
+      - route: fixversity.eu-gb.mybluemix.net/
+      - route: fixiversity.eu-gb.mybluemix.net/
