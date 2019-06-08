@@ -13,13 +13,13 @@ import { validateDate } from '../../validators/validateDate';
 })
 export class IssueSubmitComponent implements OnInit {
   submitForm = this.formBuilder.group({
-    title: ['', [Validators.required]],                                       // 0
-    description: [''],                                                        // 1
-    criteria: [''],                                                           // 2
-    severity: [''],                                                           // 3
-    category: [''],                                                           // 4
-    firstDetected: ['', [Validators.min, Validators.max, validateDate]],      // 5
-    acceptedDeadline: ['', [Validators.min, Validators.max, validateDate]]    // 6
+    title: ['', [Validators.required]],
+    description: [''],
+    criteria: [''],
+    severity: [''],
+    category: [''],
+    firstDetected: ['', [Validators.min, Validators.max, validateDate]],
+    acceptedDeadline: ['', [Validators.min, Validators.max, validateDate]]
   });
 
   minDetected = new Date(2000, 0, 1);
@@ -75,21 +75,14 @@ export class IssueSubmitComponent implements OnInit {
     if (result != null) {
       return response[type];
     }
-
-    // if (this.submitForm.controls['firstDetected'].hasError('invalidDate')) {
-    //   return invalidDate;
-    // } else if (this.submitForm.controls['acceptedDeadline'].hasError('invalidDate')) {
-    //   return invalidDate;
-    // } else {
-    //   return null;
-    // }
   }
 
   findErrorOf(control: string) {
     const controls = this.submitForm.controls;
-    const index = Object.keys(controls).indexOf(control);
+    const keys = Object.keys(controls);
+    const index = keys.indexOf(control);
 
-    const errors = Object.keys(controls).map(function(objectKey) {
+    const errors = keys.map(function(objectKey) {
       const value = controls[objectKey];
       if (objectKey === control) {
         return value.errors;
