@@ -4,12 +4,13 @@ import { IssueService } from "./issue.service";
 import { AngularFirestore } from "@angular/fire/firestore";
 import { AngularFireModule } from "@angular/fire";
 import { environment } from "src/environments/environment";
+import { AppTestingModule } from "./app-testing.module";
 
 describe("IssueService", () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [AngularFireModule.initializeApp(environment.firebase)],
-      providers: [IssueService, AngularFirestore]
+      imports: [AppTestingModule],
+      providers: [IssueService]
     });
   });
 

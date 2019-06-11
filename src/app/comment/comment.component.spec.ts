@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
 import { CommentComponent } from "./comment.component";
-import { MatCardModule } from "@angular/material";
+import { AppTestingModule } from "../app-testing.module";
 
 describe("CommentComponent", () => {
   let component: CommentComponent;
@@ -9,8 +9,7 @@ describe("CommentComponent", () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [MatCardModule],
-      declarations: [CommentComponent]
+      imports: [AppTestingModule]
     }).compileComponents();
   }));
 
