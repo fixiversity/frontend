@@ -29,7 +29,28 @@
 mat-card-title {
   font-size: 2em;
 }
-ngb-carousel, ngb-carousel img {
-  height: calc(100vh - 69px);
+ngb-carousel,
+ngb-carousel img {
+  height: calc(75vh - 69px);
   width: 100%;
+}
+.carousel-caption {
+  background: #ffffff5e;
+  text-align: left;
+  padding: 1em;
+  font-size: 2em;
+  top: 20px;
+  height: 110px;
+  width: 60%;
+  border-bottom: 5px solid #e91e63a8;
+  color: #151515;
+  left: 10%;
+  max-width: 800px;
+}
+.carousel-caption h3 {
+  font-size: 1.2em;
+}
+.carousel-caption h3 b {
+  color: #e91e63;
+  font-weight: 400;
 }

@@ -1,21 +1,20 @@
 <div id="home-container">
-
   <!--Carousel-->
   <ngb-carousel *ngIf="images">
     <ng-template ngbSlide>
       <img [src]="images[0]" alt="University" />
       <div class="carousel-caption">
-        <h3>Welcome to Fixiversity</h3>
+        <h3>Welcome to <b>Fixiversity</b></h3>
       </div>
     </ng-template>
   </ngb-carousel>
 
   <main>
-
     <mat-card class="mat-elevation-z">
       <mat-card-title>World's best universities</mat-card-title>
       <mat-card-content>
-        See the universities most dedicated to productively responding to feedback
+        See the universities most dedicated to productively responding to
+        feedback
       </mat-card-content>
 
       <mat-card-actions>
@@ -44,7 +43,5 @@
         <button mat-button>See local universities</button>
       </mat-card-actions>
     </mat-card>
-
   </main>
-
 </div>
