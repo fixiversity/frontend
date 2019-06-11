@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
 import { Error404Component } from "./error404.component";
+import { MatCardModule } from "@angular/material";
 
 describe("Error404Component", () => {
   let component: Error404Component;
@@ -8,6 +9,7 @@ describe("Error404Component", () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [MatCardModule],
       declarations: [Error404Component]
     }).compileComponents();
   }));

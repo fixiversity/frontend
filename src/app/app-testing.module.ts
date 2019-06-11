@@ -1,51 +1,47 @@
-import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
-
+import { CommonModule } from "@angular/common";
 import { AppComponent } from "./app.component";
-import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-
-import {
-  MatButtonModule,
-  MatCardModule,
-  MatIconModule,
-  MatSidenavModule,
-  MatSelectModule,
-  MatFormFieldModule,
-  MatOptionModule,
-  MatInputModule,
-  MatDatepickerModule,
-  MatSlideToggleModule
-} from "@angular/material";
-
-import { MatMomentDateModule } from "@angular/material-moment-adapter";
-
-import { FlexLayoutModule } from "@angular/flex-layout";
-
 import { IssueComponent } from "./issue/issue.component";
-import { NavigatorComponent } from "./navigator/navigator.component";
-import { AppRoutingModule } from ".//app-routing.module";
 import { CommentComponent } from "./comment/comment.component";
-import { environment } from "../environments/environment";
-import { AngularFireModule } from "@angular/fire";
-import { AngularFireStorageModule } from "@angular/fire/storage";
-import { AngularFireAuthModule } from "@angular/fire/auth";
-import {
-  AngularFirestoreModule,
-  AngularFirestore
-} from "@angular/fire/firestore";
+import { NavigatorComponent } from "./navigator/navigator.component";
 import { NavRouteComponent } from "./navigator/nav-route/nav-route.component";
 import { HomeComponent } from "./home/home.component";
 import { RankedinstitutionsComponent } from "./rankedinstitutions/rankedinstitutions.component";
 import { ResolutionComponent } from "./issue/resolution/resolution.component";
-import { IssueSubmitComponent } from "./issue/issue-submit/issue-submit.component";
 import { Error404Component } from "./error404/error404.component";
+import { IssueSubmitComponent } from "./issue/issue-submit/issue-submit.component";
+import { LoaderComponent } from "./loader/loader.component";
+import { BrowserModule } from "@angular/platform-browser";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { FlexLayoutModule } from "@angular/flex-layout";
+import {
+  MatButtonModule,
+  MatIconModule,
+  MatCardModule,
+  MatSidenavModule,
+  MatFormFieldModule,
+  MatSelectModule,
+  MatOptionModule,
+  MatInputModule,
+  MatDatepickerModule,
+  MatSlideToggleModule,
+  MAT_DATE_LOCALE
+} from "@angular/material";
+import { AppRoutingModule } from "./app-routing.module";
+import { MatMomentDateModule } from "@angular/material-moment-adapter";
+import { AngularFireModule } from "@angular/fire";
+import { environment } from "src/environments/environment";
+import {
+  AngularFirestoreModule,
+  AngularFirestore
+} from "@angular/fire/firestore";
+import { AngularFireAuthModule } from "@angular/fire/auth";
+import { AngularFireStorageModule } from "@angular/fire/storage";
 import { ReactiveFormsModule } from "@angular/forms";
-import { MAT_DATE_LOCALE } from "@angular/material/core";
-
 import { FirebaseUIModule } from "firebaseui-angular";
 import * as firebase from "firebase/app";
 import * as firebaseui from "firebaseui";
-import { LoaderComponent } from "./loader/loader.component";
+import { APP_BASE_HREF } from "@angular/common";
 
 const firebaseUiAuthConfig: firebaseui.auth.Config = {
   signInFlow: "popup",
@@ -87,6 +83,7 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
     LoaderComponent
   ],
   imports: [
+    CommonModule,
     BrowserModule,
     BrowserAnimationsModule,
     FlexLayoutModule,
@@ -111,8 +108,9 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
   ],
   providers: [
     { provide: MAT_DATE_LOCALE, useValue: "en-GB" },
-    AngularFirestore
+    AngularFirestore,
+    { provide: APP_BASE_HREF, useValue: "/home" }
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppTestingModule {}
