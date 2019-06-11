@@ -1,24 +1,26 @@
-<mat-card fxFlex=100>
-    <mat-card-content>
-        <mat-card-content fxLayout="row" fxFlex=90>
-          <section fxLayout="column" class="rating">
-            <button (click)="upvote()">
-              <i class="material-icons">
-                expand_less
-              </i>
-            </button>
-            <p>{{rating}}</p>
-            <button (click)="downvote()">
-              <i class="material-icons">
-                expand_more
-              </i>
-            </button>
-          </section>
-          {{content}}
-        </mat-card-content>
-        <mat-card>
-            <mat-card-subtitle class="author">{{userData?.name}} | {{userData?.reputation}}</mat-card-subtitle>
-            <mat-card-subtitle>{{userData?.institute}}</mat-card-subtitle>
-        </mat-card>
+<mat-card fxFlex="100">
+  <mat-card-content>
+    <mat-card-content fxLayout="row" fxFlex="90">
+      <section fxLayout="column" class="rating">
+        <button (click)="upvote()">
+          <i class="material-icons">
+            expand_less
+          </i>
+        </button>
+        <p>{{ rating }}</p>
+        <button (click)="downvote()">
+          <i class="material-icons">
+            expand_more
+          </i>
+        </button>
+      </section>
+      {{ content }}
     </mat-card-content>
+    <mat-card>
+      <mat-card-subtitle class="author"
+        >{{ userData?.name }} | {{ userData?.reputation }}</mat-card-subtitle
+      >
+      <mat-card-subtitle>{{ userData?.institute }}</mat-card-subtitle>
+    </mat-card>
+  </mat-card-content>
 </mat-card>

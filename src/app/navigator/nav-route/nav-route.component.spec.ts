@@ -1,16 +1,15 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { NavRouteComponent } from './nav-route.component';
+import { NavRouteComponent } from "./nav-route.component";
 
-describe('NavRouteComponent', () => {
+describe("NavRouteComponent", () => {
   let component: NavRouteComponent;
   let fixture: ComponentFixture<NavRouteComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NavRouteComponent ]
-    })
-    .compileComponents();
+      declarations: [NavRouteComponent]
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -19,7 +18,7 @@ describe('NavRouteComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

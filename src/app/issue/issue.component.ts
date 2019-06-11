@@ -1,24 +1,23 @@
-import { Component, OnInit } from '@angular/core';
-import {Issue} from '../issue';
+import { Component, OnInit } from "@angular/core";
+import { Issue } from "../issue";
 
-import {ActivatedRoute, ParamMap} from '@angular/router';
-import {IssueService} from '../issue.service';
+import { ActivatedRoute, ParamMap } from "@angular/router";
+import { IssueService } from "../issue.service";
 
-import {switchMap} from 'rxjs/operators';
-import {Observable} from 'rxjs';
-import {Comment} from '../comment';
-import {User} from '../user';
-import {DocumentSnapshot} from '@angular/fire/firestore';
-import {Resolution} from '../resolution';
-import { Challenge } from '../challenge';
+import { switchMap } from "rxjs/operators";
+import { Observable } from "rxjs";
+import { Comment } from "../comment";
+import { User } from "../user";
+import { DocumentSnapshot } from "@angular/fire/firestore";
+import { Resolution } from "../resolution";
+import { Challenge } from "../challenge";
 
 @Component({
   // tslint:disable-next-line:component-selector
-  selector: 'issue',
-  templateUrl: './issue.component.html',
-  styleUrls: ['./issue.component.css']
+  selector: "issue",
+  templateUrl: "./issue.component.html",
+  styleUrls: ["./issue.component.css"]
 })
-
 export class IssueComponent implements OnInit {
   issue$: Observable<Issue>;
   issue: Issue = new Issue();
@@ -33,16 +32,11 @@ export class IssueComponent implements OnInit {
   description: string;
   author: User = new User();
 
-  constructor(
-    private route: ActivatedRoute,
-    private service: IssueService,
-  ) {
-  }
+  constructor(private route: ActivatedRoute, private service: IssueService) {}
 
   ngOnInit() {
     this.issue$ = this.route.paramMap.pipe(
-      switchMap((params: ParamMap) =>
-        this.service.getIssue(+params.get('id')))
+      switchMap((params: ParamMap) => this.service.getIssue(+params.get("id")))
     );
 
     this.issue$.subscribe(issue => {
@@ -76,6 +70,8 @@ export class IssueComponent implements OnInit {
   }
   newChallenge(author: string, content: string) {
     console.log(author, content);
-    this.challenges.push(new Challenge(new User(author, 0, 'University Placeholder'), 0, content));
+    this.challenges.push(
+      new Challenge(new User(author, 0, "University Placeholder"), 0, content)
+    );
   }
 }

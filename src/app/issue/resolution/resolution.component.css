@@ -1,15 +1,15 @@
-.buttons{
+.buttons {
   padding: 0 0.5rem 1rem 0.5rem;
 }
-.buttons button{
+.buttons button {
   margin-right: 0.5rem;
 }
-.rating{
+.rating {
   margin-top: 1rem;
 }
-.show-more{
+.show-more {
   color: grey;
 }
-.show-more:hover{
+.show-more:hover {
   text-decoration: underline;
 }
