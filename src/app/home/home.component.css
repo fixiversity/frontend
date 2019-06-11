@@ -3,14 +3,14 @@
   flex-direction: row;
   justify-content: space-evenly;
   flex-wrap: wrap;
-  align-content:flex-start;
+  align-content: flex-start;
   max-width: 1300px;
   margin: auto;
 }
 #home-container main .mat-card {
   flex-grow: 1;
   flex-wrap: wrap;
-  flex-basis:25%;
+  flex-basis: 25%;
   margin: 1rem;
   margin-right: auto;
 }
