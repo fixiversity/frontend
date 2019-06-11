@@ -29,10 +29,17 @@
 mat-card-title {
   font-size: 2em;
 }
-ngb-carousel,
-ngb-carousel img {
-  height: calc(75vh - 69px);
+ngb-carousel {
+  height: calc(65vh - 69px);
   width: 100%;
+  overflow: hidden;
+}
+ngb-carousel img {
+  min-height: calc(75vh - 69px);
+  height: auto;
+  width: 100%;
+  margin-top: -10vh;
+  max-height: 1100px;
 }
 .carousel-caption {
   background: #ffffff5e;
