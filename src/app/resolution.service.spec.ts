@@ -1,10 +1,12 @@
 import { TestBed, inject } from "@angular/core/testing";
 
 import { ResolutionService } from "./resolution.service";
+import { AppTestingModule } from "./app-testing.module";
 
 describe("ResolutionService", () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
+      imports: [AppTestingModule],
       providers: [ResolutionService]
     });
   });
