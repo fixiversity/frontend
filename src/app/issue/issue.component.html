@@ -1,47 +1,103 @@
 <section fxLayout="column">
-  <h1 class=mat-card-title>Issue:</h1>
+  <h1 class="mat-card-title">Issue:</h1>
   <mat-card>
-    <mat-card-title>{{issue.title}}</mat-card-title>
+    <mat-card-title>{{ issue.title }}</mat-card-title>
     <ng-container *ngIf="this.author.name != null">
-      <mat-card-subtitle>{{author.name}} | {{author.reputation}}</mat-card-subtitle>
-      <mat-card-subtitle>{{author.institute}}</mat-card-subtitle>
+      <mat-card-subtitle
+        >{{ author.name }} | {{ author.reputation }}</mat-card-subtitle
+      >
+      <mat-card-subtitle>{{ author.institute }}</mat-card-subtitle>
     </ng-container>
 
     <mat-card-content>
       <section class="post" fxLayout="row">
-        <mat-card class=content fxFlex=100>
-          <mat-card-content>{{issue.description}}</mat-card-content>
+        <mat-card class="content" fxFlex="100">
+          <mat-card-content>{{ issue.description }}</mat-card-content>
         </mat-card>
-        <app-resolution *ngIf="this.resID" [id]="this.resID" class="aside" fxFlex=100></app-resolution>
+        <app-resolution
+          *ngIf="this.resID"
+          [id]="this.resID"
+          class="aside"
+          fxFlex="100"
+        ></app-resolution>
       </section>
     </mat-card-content>
   </mat-card>
 </section>
 
 <section fxLayout="row">
-  <section fxLayout="column" fxFlex=100> <!-- Comment -->
+  <section fxLayout="column" fxFlex="100">
+    <!-- Comment -->
     <section fxLayout="column">
-      <h2 class=mat-card-title>Post a comment:</h2>
-      <input #commentAuthor style="width: 25%" (keyup.enter)="newComment(commentAuthor.value, commentContent.value)"/>
-      <input #commentContent style="width: 90%" (keyup.enter)="newComment(commentAuthor.value, commentContent.value)"/>
-      <button (click)="newComment(commentAuthor.value, commentContent.value)" mat-raised-button style="width: 4rem">Post</button>
+      <h2 class="mat-card-title">Post a comment:</h2>
+      <input
+        #commentAuthor
+        style="width: 25%"
+        (keyup.enter)="newComment(commentAuthor.value, commentContent.value)"
+      />
+      <input
+        #commentContent
+        style="width: 90%"
+        (keyup.enter)="newComment(commentAuthor.value, commentContent.value)"
+      />
+      <button
+        (click)="newComment(commentAuthor.value, commentContent.value)"
+        mat-raised-button
+        style="width: 4rem"
+      >
+        Post
+      </button>
     </section>
-    <section fxFlex=100 fxLayout="column" fxLayout="column-reverse" fxLayoutGap="gappx">
-      <comment *ngFor="let comment of comments"
-      [user]="comment.user" [rating]="comment.score" [content]="comment.body" fxLayout="row"></comment>
+    <section
+      fxFlex="100"
+      fxLayout="column"
+      fxLayout="column-reverse"
+      fxLayoutGap="gappx"
+    >
+      <comment
+        *ngFor="let comment of comments"
+        [user]="comment.user"
+        [rating]="comment.score"
+        [content]="comment.body"
+        fxLayout="row"
+      ></comment>
     </section>
   </section>
 
-  <section fxLayout="column" fxFlex=100> <!-- Challenge (Can create it's own component) -->
+  <section fxLayout="column" fxFlex="100">
+    <!-- Challenge (Can create it's own component) -->
     <section fxLayout="column">
-      <h2 class=mat-card-title>Post a challenge:</h2>
-      <input #challengeAuthor style="width: 25%" (keyup.enter)="newChallenge(challengeAuthor.value, challengeContent.value)"/>
-      <input #challengeContent style="width: 90%" (keyup.enter)="newChallenge(challengeAuthor.value, challengeContent.value)"/>
-      <button (click)="newChallenge(challengeAuthor.value, challengeContent.value)" mat-raised-button style="width: 4rem">Post</button>
+      <h2 class="mat-card-title">Post a challenge:</h2>
+      <input
+        #challengeAuthor
+        style="width: 25%"
+        (keyup.enter)="
+          newChallenge(challengeAuthor.value, challengeContent.value)
+        "
+      />
+      <input
+        #challengeContent
+        style="width: 90%"
+        (keyup.enter)="
+          newChallenge(challengeAuthor.value, challengeContent.value)
+        "
+      />
+      <button
+        (click)="newChallenge(challengeAuthor.value, challengeContent.value)"
+        mat-raised-button
+        style="width: 4rem"
+      >
+        Post
+      </button>
     </section>
-    <section fxFlex=100 fxLayout="column" fxLayoutGap="gappx">
-        <comment *ngFor="let challenge of challenges"
-        [user]="challenge.user" [rating]="challenge.rating" [content]="challenge.content" fxLayout="row"></comment>
-      </section>
+    <section fxFlex="100" fxLayout="column" fxLayoutGap="gappx">
+      <comment
+        *ngFor="let challenge of challenges"
+        [user]="challenge.user"
+        [rating]="challenge.rating"
+        [content]="challenge.content"
+        fxLayout="row"
+      ></comment>
+    </section>
   </section>
 </section>
