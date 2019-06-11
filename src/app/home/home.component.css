@@ -42,17 +42,18 @@ ngb-carousel img {
   max-height: 1100px;
 }
 .carousel-caption {
-  background: #ffffff5e;
+  background: #ffffff8f;
   text-align: left;
   padding: 1em;
   font-size: 2em;
-  top: 20px;
+  top: calc(15vh - 69px);
   height: 110px;
   width: 60%;
   border-bottom: 5px solid #e91e63a8;
   color: #151515;
   left: 10%;
-  max-width: 800px;
+  width: 800px;
+  text-shadow: 0 0 20px #fff;
 }
 .carousel-caption h3 {
   font-size: 1.2em;
