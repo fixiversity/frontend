@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
 import { IssueSubmitComponent } from "./issue-submit.component";
+import { AppTestingModule } from "src/app/app-testing.module";
 
 describe("IssueSubmitComponent", () => {
   let component: IssueSubmitComponent;
@@ -8,7 +9,7 @@ describe("IssueSubmitComponent", () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [IssueSubmitComponent]
+      imports: [AppTestingModule]
     }).compileComponents();
   }));
 

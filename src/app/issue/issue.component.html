@@ -54,9 +54,15 @@
       fxLayout="column-reverse"
       fxLayoutGap="gappx"
     >
-      <comment
+      <!-- <comment
         *ngFor="let comment of comments"
         [user]="comment.user"
+        [rating]="comment.score"
+        [content]="comment.body"
+        fxLayout="row"
+      ></comment> -->
+      <comment
+        *ngFor="let comment of comments"
         [rating]="comment.score"
         [content]="comment.body"
         fxLayout="row"
