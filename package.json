@@ -4,7 +4,7 @@
   "watch": {
     "prettier": {
       "patterns": ["src", "app"],
-      "extensions": "ts",
+      "extensions": "ts, html, css",
       "ignore": "node_modules",
       "quiet": false,
       "delay": "2500",
@@ -20,7 +20,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "config": "node config/env.js",
-    "prettier": "echo 'PRETTIER' && prettier --write 'src/**/*.ts'"
+    "prettier": "echo 'PRETTIER' && prettier --write 'src/**/*.{ts,html,css}'"
   },
   "private": true,
   "dependencies": {
