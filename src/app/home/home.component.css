@@ -1,4 +1,4 @@
-#home-container{
+#home-container main {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -7,7 +7,7 @@
   max-width: 1300px;
   margin: auto;
 }
-#home-container .mat-card {
+#home-container main .mat-card {
   flex-grow: 1;
   flex-wrap: wrap;
   flex-basis:25%;
@@ -28,4 +28,8 @@
 }
 mat-card-title {
   font-size: 2em;
+}
+ngb-carousel, ngb-carousel img {
+  height: calc(100vh - 69px);
+  width: 100%;
 }

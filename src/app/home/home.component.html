@@ -1,40 +1,50 @@
 <div id="home-container">
 
-  <mat-card class="mat-elevation-z">
-    <mat-card-title>World's best universities</mat-card-title>
-    <mat-card-content>
-      See the universities most dedicated to productively responding to feedback
-    </mat-card-content>
+  <!--Carousel-->
+  <ngb-carousel *ngIf="images">
+    <ng-template ngbSlide>
+      <img [src]="images[0]" alt="University" />
+      <div class="carousel-caption">
+        <h3>Welcome to Fixiversity</h3>
+      </div>
+    </ng-template>
+  </ngb-carousel>
 
-    <mat-card-actions>
-      <button mat-button>See best scored universities</button>
-    </mat-card-actions>
-  </mat-card>
+  <main>
 
-  <mat-card class="mat-elevation-z">
-    <mat-card-title>Improve your local university</mat-card-title>
-    <mat-card-content>
-      Solving a problem starts with tracking it!
-    </mat-card-content>
+    <mat-card class="mat-elevation-z">
+      <mat-card-title>World's best universities</mat-card-title>
+      <mat-card-content>
+        See the universities most dedicated to productively responding to feedback
+      </mat-card-content>
 
-    <mat-card-actions>
-      <button mat-button>Register as a student</button>
-    </mat-card-actions>
-  </mat-card>
+      <mat-card-actions>
+        <button mat-button>See best scored universities</button>
+      </mat-card-actions>
+    </mat-card>
 
-  <mat-card class="mat-elevation-z">
-    <mat-card-title>Top local universities</mat-card-title>
-    <mat-card-content>
-      Which institutions near you care most?
-    </mat-card-content>
+    <mat-card class="mat-elevation-z">
+      <mat-card-title>Improve your local university</mat-card-title>
+      <mat-card-content>
+        Solving a problem starts with tracking it!
+      </mat-card-content>
 
-    <mat-card-actions>
-      <button mat-button>See local universities</button>
-    </mat-card-actions>
-  </mat-card>
+      <mat-card-actions>
+        <button mat-button>Register as a student</button>
+      </mat-card-actions>
+    </mat-card>
 
-  <ngu-carousel #carousel>
+    <mat-card class="mat-elevation-z">
+      <mat-card-title>Top local universities</mat-card-title>
+      <mat-card-content>
+        Which institutions near you care most?
+      </mat-card-content>
 
-  </ngu-carousel>
+      <mat-card-actions>
+        <button mat-button>See local universities</button>
+      </mat-card-actions>
+    </mat-card>
+
+  </main>
 
 </div>
