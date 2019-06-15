@@ -44,5 +44,8 @@ src/environments/keys.ts
 # Intellij Settings
 edu-change.iml
 
+# Vim tags
+tags
+
 # Vscode
 .vscode
