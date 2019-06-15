@@ -46,6 +46,7 @@ import { FirebaseUIModule } from "firebaseui-angular";
 import * as firebase from "firebase/app";
 import * as firebaseui from "firebaseui";
 import { LoaderComponent } from "./loader/loader.component";
+import { FooterComponent } from "./footer/footer.component";
 
 const firebaseUiAuthConfig: firebaseui.auth.Config = {
   signInFlow: "popup",
@@ -84,7 +85,8 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
     ResolutionComponent,
     Error404Component,
     IssueSubmitComponent,
-    LoaderComponent
+    LoaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

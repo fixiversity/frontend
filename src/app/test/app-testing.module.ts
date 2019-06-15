@@ -11,6 +11,7 @@ import { ResolutionComponent } from "../issue/resolution/resolution.component";
 import { Error404Component } from "../error404/error404.component";
 import { IssueSubmitComponent } from "../issue/issue-submit/issue-submit.component";
 import { LoaderComponent } from "../loader/loader.component";
+import { FooterComponent } from "../footer/footer.component";
 import { BrowserModule } from "@angular/platform-browser";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { FlexLayoutModule } from "@angular/flex-layout";
@@ -80,7 +81,8 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
     ResolutionComponent,
     Error404Component,
     IssueSubmitComponent,
-    LoaderComponent
+    LoaderComponent,
+    FooterComponent
   ],
   imports: [
     CommonModule,

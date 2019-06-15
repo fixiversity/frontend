@@ -14,7 +14,7 @@
   "scripts": {
     "ng": "ng",
     "watch": "npm-watch",
-    "start": "concurrently \"npm run watch prettier\" \"ng serve\" ",
+    "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
