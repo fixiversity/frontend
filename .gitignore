@@ -46,3 +46,6 @@ edu-change.iml
 
 # Vim tags
 tags
+
+# Vscode
+.vscode

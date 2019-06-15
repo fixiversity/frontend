@@ -1,16 +1,16 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { ResolutionComponent } from './resolution.component';
+import { ResolutionComponent } from "./resolution.component";
+import { AppTestingModule } from "src/app/app-testing.module";
 
-describe('ResolutionComponent', () => {
+describe("ResolutionComponent", () => {
   let component: ResolutionComponent;
   let fixture: ComponentFixture<ResolutionComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ResolutionComponent ]
-    })
-    .compileComponents();
+      imports: [AppTestingModule]
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -19,7 +19,7 @@ describe('ResolutionComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

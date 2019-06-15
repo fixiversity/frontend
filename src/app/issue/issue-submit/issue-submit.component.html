@@ -1,41 +1,130 @@
-<form [formGroup]="submitForm" (ngSubmit)="onSubmit()">
-  <mat-label>Issue title:
-    <input matInput required type=text formControlName="title"/>
-  </mat-label>
-  <br>
-  <mat-label>Description of issue:
-    <input matInput type=text formControlName="description"/>
-  </mat-label>
-  <br>
-  <mat-label>
-    Resolution criteria:
-    <input matInput type=text formControlName="criteria"/>
-  </mat-label>
-  <br>
-  <mat-label>
-    Severity:
-    <mat-form-field>
-      <mat-select fxFlex=10 formControlName="severity" fxFlex=100>
-        <mat-option [value]="'high'">High</mat-option>
-        <mat-option [value]="'medium'">Medium</mat-option>
-        <mat-option [value]="'low'">Low</mat-option>
-      </mat-select>
-    </mat-form-field>
-  </mat-label>
-  <mat-label>
-    Severity:
-    <mat-form-field>
-      <mat-select fxFlex=10 formControlName="category" fxFlex=100>
-        <mat-option [value]="1">Category 1</mat-option>
-        <mat-option [value]="2">Category 2</mat-option>
-        <mat-option [value]="3">Category 3</mat-option>
-      </mat-select>
-    </mat-form-field>
-  </mat-label>
-  <br>
-  <button mat-button type="submit">Submit</button>
-</form>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      Submit issue:
+    </mat-card-title>
+    <mat-card-subtitle>
+      Tell us something that matters to you and needs attention
+    </mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <form fxLayout="row" [formGroup]="submitForm" (ngSubmit)="onSubmit()">
+      <section class="left-column" fxLayout="column" fxFlex="50">
+        <!-- <mat-label>Issue title:</mat-label><br> -->
+        <mat-form-field>
+          <input
+            matInput
+            placeholder="Issue title"
+            required
+            type="text"
+            formControlName="title"
+          />
+          <mat-error>{{ getErrorDisplay("title", "required") }}</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <input
+            matInput
+            [matDatepicker]="detectedPicker"
+            [min]="minDetected"
+            [max]="maxDetected"
+            placeholder="First detected date"
+            formControlName="firstDetected"
+          />
+          <mat-datepicker-toggle
+            matSuffix
+            [for]="detectedPicker"
+          ></mat-datepicker-toggle>
+          <mat-datepicker #detectedPicker></mat-datepicker>
+          <mat-error>{{
+            getErrorDisplay("firstDetected", "invalidDate")
+          }}</mat-error>
+        </mat-form-field>
+
+        <!-- <mat-label>Severity:</mat-label> -->
+        <mat-form-field>
+          <mat-select
+            placeholder="Severity"
+            fxFlex="10"
+            formControlName="severity"
+            fxFlex="100"
+          >
+            <mat-option [value]="'high'">High</mat-option>
+            <mat-option [value]="'medium'">Medium</mat-option>
+            <mat-option [value]="'low'">Low</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <!-- <mat-label>Severity:</mat-label> -->
+        <mat-form-field>
+          <mat-select
+            placeholder="Category"
+            fxFlex="10"
+            formControlName="category"
+            fxFlex="100"
+          >
+            <mat-option [value]="1">Category 1</mat-option>
+            <mat-option [value]="2">Category 2</mat-option>
+            <mat-option [value]="3">Category 3</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-slide-toggle>
+          Submit as anonymous
+        </mat-slide-toggle>
+      </section>
+
+      <section class="divider" fxFlex="2"></section>
+
+      <section class="right-column" fxLayout="column" fxFlex="50">
+        <!-- <mat-label>Description of issue:</mat-label><br> -->
+        <mat-form-field>
+          <textarea
+            matInput
+            matTextareaAutosize
+            matAutosizeMaxRows="15"
+            placeholder="Description of issue"
+            type="text"
+            formControlName="description"
+          ></textarea>
+        </mat-form-field>
+
+        <!-- <mat-label>Resolution criteria:</mat-label> -->
+        <mat-form-field>
+          <textarea
+            matInput
+            matTextareaAutosize
+            matAutosizeMaxRows="15"
+            placeholder="Resolution criteria"
+            type="text"
+            formControlName="criteria"
+          ></textarea>
+        </mat-form-field>
+        <mat-form-field>
+          <input
+            matInput
+            [matDatepicker]="acceptancePicker"
+            [min]="minAccepted"
+            [max]="maxAccepted"
+            placeholder="Acceptance solving deadline"
+            formControlName="acceptedDeadline"
+          />
+          <mat-datepicker-toggle
+            matSuffix
+            [for]="acceptancePicker"
+          ></mat-datepicker-toggle>
+          <mat-datepicker #acceptancePicker></mat-datepicker>
+          <mat-error>{{
+            getErrorDisplay("acceptedDeadline", "invalidDate")
+          }}</mat-error>
+        </mat-form-field>
+
+        <button mat-button type="submit">Submit</button>
+      </section>
+    </form>
+  </mat-card-content>
+</mat-card>
 <firebase-ui
-    (signInSuccessWithAuthResult)="successCallback($event)"
-    (signInFailure)="errorCallback($event)"></firebase-ui>
+  (signInSuccessWithAuthResult)="successCallback($event)"
+  (signInFailure)="errorCallback($event)"
+></firebase-ui>
 <button mat-button (click)="signOut()">Sign Out</button>

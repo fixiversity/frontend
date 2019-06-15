@@ -1,0 +1,24 @@
+.left-column mat-form-field {
+  margin-bottom: 0.5rem;
+}
+
+.right-column mat-form-field {
+  margin-bottom: 0.5rem;
+}
+
+.left-column mat-form-field {
+  width: 100%;
+}
+
+mat-slide-toggle {
+  align-self: flex-end;
+}
+
+.divider:after {
+  content: "";
+  height: 100%;
+  display: block;
+  margin-right: 50%;
+  border-left: 1px solid lightgrey;
+  margin-left: 50%;
+}
