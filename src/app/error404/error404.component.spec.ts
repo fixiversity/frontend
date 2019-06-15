@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
 import { Error404Component } from "./error404.component";
-import { AppTestingModule } from "../app-testing.module";
+import { AppTestingModule } from "../test/app-testing.module";
 
 describe("Error404Component", () => {
   let component: Error404Component;

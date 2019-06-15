@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
 import { RankedinstitutionsComponent } from "./rankedinstitutions.component";
-import { AppTestingModule } from "../app-testing.module";
+import { AppTestingModule } from "../test/app-testing.module";
 
 describe("RankedinstitutionsComponent", () => {
   let component: RankedinstitutionsComponent;
