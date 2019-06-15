@@ -1,16 +1,16 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
-import { AppComponent } from "./app.component";
-import { IssueComponent } from "./issue/issue.component";
-import { CommentComponent } from "./comment/comment.component";
-import { NavigatorComponent } from "./navigator/navigator.component";
-import { NavRouteComponent } from "./navigator/nav-route/nav-route.component";
-import { HomeComponent } from "./home/home.component";
-import { RankedinstitutionsComponent } from "./rankedinstitutions/rankedinstitutions.component";
-import { ResolutionComponent } from "./issue/resolution/resolution.component";
-import { Error404Component } from "./error404/error404.component";
-import { IssueSubmitComponent } from "./issue/issue-submit/issue-submit.component";
-import { LoaderComponent } from "./loader/loader.component";
+import { AppComponent } from "../app.component";
+import { IssueComponent } from "../issue/issue.component";
+import { CommentComponent } from "../comment/comment.component";
+import { NavigatorComponent } from "../navigator/navigator.component";
+import { NavRouteComponent } from "../navigator/nav-route/nav-route.component";
+import { HomeComponent } from "../home/home.component";
+import { RankedinstitutionsComponent } from "../rankedinstitutions/rankedinstitutions.component";
+import { ResolutionComponent } from "../issue/resolution/resolution.component";
+import { Error404Component } from "../error404/error404.component";
+import { IssueSubmitComponent } from "../issue/issue-submit/issue-submit.component";
+import { LoaderComponent } from "../loader/loader.component";
 import { BrowserModule } from "@angular/platform-browser";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { FlexLayoutModule } from "@angular/flex-layout";
@@ -27,7 +27,7 @@ import {
   MatSlideToggleModule,
   MAT_DATE_LOCALE
 } from "@angular/material";
-import { AppRoutingModule } from "./app-routing.module";
+import { AppRoutingModule } from "../app-routing.module";
 import { MatMomentDateModule } from "@angular/material-moment-adapter";
 import { AngularFireModule } from "@angular/fire";
 import { environment } from "src/environments/environment";

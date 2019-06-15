@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
 import { IssueSubmitComponent } from "./issue-submit.component";
-import { AppTestingModule } from "src/app/app-testing.module";
+import { AppTestingModule } from "src/app/test/app-testing.module";
 
 describe("IssueSubmitComponent", () => {
   let component: IssueSubmitComponent;

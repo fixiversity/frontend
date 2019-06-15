@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
 import { LoaderComponent } from "./loader.component";
-import { AppTestingModule } from "../app-testing.module";
+import { AppTestingModule } from "../test/app-testing.module";
 
 describe("LoaderComponent", () => {
   let component: LoaderComponent;
