@@ -53,6 +53,7 @@ ngb-carousel img {
   color: #151515;
   left: 10%;
   text-shadow: 0 0 20px #fff;
+  height: calc(60vh - 69px);
 }
 .white {
   color: #fff;
@@ -63,5 +64,5 @@ ngb-carousel img {
 }
 .carousel-caption h3 b {
   color: #e91e63;
-  font-weight: 400;
+  font-weight: 700;
 }
