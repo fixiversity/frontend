@@ -43,6 +43,8 @@ import * as firebase from "firebase/app";
 import * as firebaseui from "firebaseui";
 import { APP_BASE_HREF } from "@angular/common";
 
+import { NgbCarouselModule } from "@ng-bootstrap/ng-bootstrap";
+
 const firebaseUiAuthConfig: firebaseui.auth.Config = {
   signInFlow: "popup",
   signInOptions: [
@@ -104,7 +106,8 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
     AngularFireStorageModule, // imports firebase/storage only needed for storage features
     ReactiveFormsModule,
-    FirebaseUIModule.forRoot(firebaseUiAuthConfig)
+    FirebaseUIModule.forRoot(firebaseUiAuthConfig),
+    NgbCarouselModule
   ],
   providers: [
     { provide: MAT_DATE_LOCALE, useValue: "en-GB" },

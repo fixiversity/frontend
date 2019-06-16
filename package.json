@@ -3,7 +3,10 @@
   "version": "0.0.0",
   "watch": {
     "prettier": {
-      "patterns": ["src", "app"],
+      "patterns": [
+        "src",
+        "app"
+      ],
       "extensions": "ts, html, css",
       "ignore": "node_modules",
       "quiet": false,
@@ -38,6 +41,8 @@
     "@angular/platform-browser": "^6.1.0",
     "@angular/platform-browser-dynamic": "^6.1.0",
     "@angular/router": "^6.1.0",
+    "@ng-bootstrap/ng-bootstrap": "^4.2.1",
+    "bootstrap": "^4.3.1",
     "@ngu/carousel": "^1.5.5",
     "concurrently": "^4.1.0",
     "core-js": "^2.5.4",
