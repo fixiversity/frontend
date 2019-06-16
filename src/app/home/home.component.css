@@ -36,8 +36,7 @@ ngb-carousel {
 }
 ngb-carousel img {
   min-height: calc(75vh - 69px);
-  height: auto;
-  width: 100%;
+  object-fit: contain;
   margin-top: -10vh;
   max-height: 1100px;
 }
