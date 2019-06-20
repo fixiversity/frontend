@@ -1,4 +1,4 @@
-#home-container {
+#home-container main {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -7,7 +7,7 @@
   max-width: 1300px;
   margin: auto;
 }
-#home-container .mat-card {
+#home-container main .mat-card {
   flex-grow: 1;
   flex-wrap: wrap;
   flex-basis: 25%;
@@ -28,4 +28,40 @@
 }
 mat-card-title {
   font-size: 2em;
+}
+ngb-carousel {
+  height: calc(65vh - 69px);
+  width: 100%;
+  overflow: hidden;
+}
+ngb-carousel img {
+  min-height: calc(75vh - 69px);
+  object-fit: contain;
+  margin-top: -10vh;
+  max-height: 1100px;
+}
+.carousel-caption {
+  background: #ffffff17;
+  text-align: left;
+  padding: 1em;
+  font-size: 2em;
+  top: calc(15vh - 69px);
+  clear: both;
+  width: 25em;
+  border-top: 5px solid #e91e63a8;
+  color: #151515;
+  left: 10%;
+  text-shadow: 0 0 20px #fff;
+  height: calc(60vh - 69px);
+}
+.white {
+  color: #fff;
+  text-shadow: 0 0 20px #000;
+}
+.carousel-caption h3 {
+  font-size: 1.2em;
+}
+.carousel-caption h3 b {
+  color: #e91e63;
+  font-weight: 700;
 }
