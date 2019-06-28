@@ -35,10 +35,9 @@ ngb-carousel {
   overflow: hidden;
 }
 ngb-carousel img {
-  min-height: calc(75vh - 69px);
-  object-fit: contain;
-  margin-top: -10vh;
-  max-height: 1100px;
+  height: calc(75vh - 69px);
+  object-fit: cover;
+  min-width: 100%;
 }
 .carousel-caption {
   background: #ffffff17;
